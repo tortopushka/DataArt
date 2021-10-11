@@ -1,17 +1,17 @@
 
 public class ReverseInteger {
-    int num;
+    int number;
 
     ReverseInteger(){
-        num = 0;
+        number = 0;
     }
 
     public int reverse(int inputNumber){
-        num=0;
+        number=0;
         while (inputNumber!=0) {
-            num = num * 10 + inputNumber%10;
+            number =  inputNumber%10 + number * 10;
             inputNumber/= 10;
         }
-        return num;
+        return number;
     }
 }
