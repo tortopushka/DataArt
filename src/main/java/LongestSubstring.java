@@ -3,25 +3,25 @@ public class LongestSubstring {
     String str;
 
     LongestSubstring(){
-        this.str = "";
+        str = "";
     }
 
     public int getLengthOfLongestSubstring(String st){
-        this.str = st;
-        int n = this.str.length();
-        int max = 0;
+        str = st;
+        int size = str.length();
+        int maxStr = 0;
         if (n==1){
-            max=1;
+            maxStr=1;
         }
         else {
             char[] charArr = str.toCharArray();
             int start, finish, s, j;
             boolean flag = true;
-            for (int i = 0; i < n - 1; i++) {
+            for (int i = 0; i < size - 1; i++) {
                 start = i;
                 finish = i;
                 j = i + 1;
-                while (flag && j < n) {
+                while (flag && j < size) {
                     s = start;
                     while (s <= finish) {
                         if (charArr[j] == charArr[s]) {
@@ -32,10 +32,10 @@ public class LongestSubstring {
                     j++;
                     if (flag) finish++;
                 }
-                if (finish - start + 1 > max) max = finish - start + 1;
+                if (finish - start + 1 > maxStr) maxStr = finish - start + 1;
                 flag = true;
             }
         }
-        return max;
+        return maxStr;
     }
 }
