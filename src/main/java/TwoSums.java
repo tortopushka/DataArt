@@ -10,18 +10,18 @@ public class TwoSums {
         target = 0;
     }
 
-    public int[] getTwoSum(int[] arr, int t){
-        nums = arr;
-        target = t;
-        int start=0;
-        int end = arr.length-1;
-        while(start<end ){
-            if(nums[start]+nums[end]>target)
+    public int[] getTwoSum(int[] array, int temp){
+        nums = array;
+        target = temp;
+        int begin=0;
+        int end = array.length-1;
+        while(begin<end ){
+            if (nums[begin]+nums[end]<target)
+                begin++;
+            else if (nums[begin]+nums[end]>target)
                 end--;
-            else if (nums[start]+nums[end]<target)
-                start++;
             else {
-                return new int[]{nums[start], nums[end]};
+                return new int[]{nums[begin], nums[end]};
             }
         }
         return new int[]{};
